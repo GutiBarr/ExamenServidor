@@ -1,0 +1,181 @@
+/* ===== RESET ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== BASE MODO NOCHE ===== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0f172a;
+    color: #e5e7eb;
+    min-height: 100vh;
+    padding: 20px;
+
+    /* Para centrar vistas simples */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== LINKS (pantalla inicial) ===== */
+a {
+    text-decoration: none;
+    padding: 14px 26px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #38bdf8, #22d3ee);
+    color: #022c22;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 30px rgba(34, 211, 238, 0.7);
+}
+
+/* ===== HEADER (vista principal) ===== */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #38bdf8;
+}
+
+header h2 {
+    color: #a5f3fc;
+    font-weight: normal;
+}
+
+/* ===== MENSAJES ===== */
+.error {
+    background-color: #7f1d1d;
+    color: #fecaca;
+    padding: 10px 16px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+/* ===== FORMULARIOS ===== */
+.formulario-configuracion {
+    background: linear-gradient(145deg, #1e293b, #020617);
+    padding: 30px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+label {
+    font-size: 0.9rem;
+    color: #a5f3fc;
+}
+
+input,
+select {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    background-color: #020617;
+    color: #e5e7eb;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    box-shadow: 0 0 0 2px #38bdf8;
+}
+
+/* ===== BOTONES ===== */
+button {
+    margin-top: 10px;
+    padding: 12px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #22c55e, #4ade80);
+    color: #022c22;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 18px rgba(34, 197, 94, 0.6); 
+}
+
+/* ===== CONTENEDOR FLEX (tarjetas) ===== */
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* ===== TARJETAS ===== */
+.tarjeta {
+    background: linear-gradient(145deg, #1e293b, #020617);
+    width: 220px;
+    padding: 15px;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(56, 189, 248, 0.15);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(56, 189, 248, 0.35);
+}
+
+.tarjeta img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    background-color: transparent;
+    border-radius: 12px;
+    padding: 6px;
+}
+/* 
+sobre este proyecto sin que toques nada del codigo que ya hay(jugador.java, posicion.java FuenteDatos.java ni el css) tienes que usar eso para hacer el proyecto
+las imagenes comenta donde tengo que copiarlas
+no comentes nada del codigo
+la aplicacion tendra vista 1: configuracion inicial 
+la aplicacion comenzara con una pantalla principal que contendra::after
+el titulo de la aplicacion visible de forma destacada.
+un formulario de inicio en el que se solicitara los siguientes datos:
+-nombre del gerente
+- un slect para seleccionar con que equipo comenzar de una lista de equipos predefinida
+-difulcutad facil normal o dificil y de ello dependerá el presupuesto del club inicial favil 200 millones, media 120 millones y dificil 80 millones
+al enviar el formulario se cargara la segunda vista donde la plantilla del equipo conendra a los jugadores del equipo seleccionado
+
+vista 2: esta pantalla mostrara toda la informacion y funcionalidad principal de la aplicacion:
+1 pantalla del equipo
+se mostrara la plantilla actual del club, formada por los jugadores pertenecientes al equipo.
+para cada jugador se mostrara  nombre, posicion , valor de mercado salario, y equipo original. cada jugador de la plantilla dispondra de un boton vender, que permitira eliminarlo del equipo y actualizar el presupuesto 
+2 jugadores disponibles en el mercado 
+se mostrara una lista de jugadores fichables es decir aquellos que no pertenecen actualmente al equipo del usuario. los jugadores se mostraran con el mismo formato que en la lista anterior.
+cada jugador fichable dispondra de un boton FIchar que permitira añadirlo a la plantilla si se cumplen todas las restricciones.
+3 informacion del club: en la misma pantalla se mostrara informacion actualizada del club: gerente del club, presupuesto disponible, gastos total en salarios numero total de jugadores y distribucion de jugadores por posicion
+
+no se podra fichar jugadores si el presupuesto es insuficiente
+
+a tener en cuenta 
+los datos del gerente como el club deben ser persistentes aunque se pierda la sesion
+ */
